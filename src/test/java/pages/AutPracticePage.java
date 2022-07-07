@@ -27,12 +27,12 @@ public class AutPracticePage extends BasePage {
     private String cityRegister = "//input[@id='city']";
     private String zipCodeRegister = "//input[@id='postcode']";
     private String mobileNumberRegister = "//input[@id='phone_mobile']";
-    private String createAnAccountButtonRegister = "//button[@id='submitAccount']";
-    private String accountCreatedAssert = "//p[contains(text(),'Welcome to your account. Here you can manage all o')]";
+    private String createAnAccountButtonRegister = "//span[normalize-space()='Register']";
+    private String accountCreatedAssert = "//p[@class='info-account']";
 
     private String passwordFailed = "//b[contains(text(),'passwd')]";
 
-    private String buttonSignOut = "//header/div[2]/div[1]/div[1]/nav[1]/div[2]/a[1]";
+    private String buttonSignOut = "a[title='Log me out']";
 
     public AutPracticePage() {
         super(driver);
@@ -75,12 +75,12 @@ public class AutPracticePage extends BasePage {
         write(mobileNumberRegister,"11444444444");
         clickElementByxpath(createAnAccountButtonRegister);
     }
-    public void enterFailedPassword(String emailSignIn, String passwordFailed) {
+    public void enterFailedPassword(String emailSignIn) {
         clickElementByxpath(buttonGender);
         write(nameInputField, "Emiliano");
         write(lastNameRegister, "Diaz");
-        write(emailInputRegister,emailSignIn);
-        write(passwordInputRegister,passwordFailed);
+        write(emailInputRegister, emailSignIn);
+        write(passwordInputRegister, "Pass");
         clickElementByxpath(dateOfBirth);
         clickElementByxpath(month);
         clickElementByxpath(year);
@@ -102,8 +102,6 @@ public class AutPracticePage extends BasePage {
     public void ClickCreateAnAccount() {
         clickElementByxpath(createAnAccountButtonRegister);
     }
-
-
     public String resultAccountCreatedIsVisible() {
         return textFromElement(accountCreatedAssert);
     }

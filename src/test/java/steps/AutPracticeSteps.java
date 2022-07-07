@@ -35,23 +35,19 @@ public class AutPracticeSteps {
     @When("^completo los campos y el campo (.+)$")
     public void completarDatosUsuario(String emailSignIn) {
         automationPractice.enterInformationUser(emailSignIn);
-    }
-    @And("^Cliqueo en crear cuenta$")
-    public void crearCuenta() {
         automationPractice.ClickCreateAnAccount();
     }
-    @Then("^Verifico que la cuenta creada es visible$")
-    public void cuentaCreadaIsVisible() {
+    @Then("^verifico que la pagina esta visible$")
+    public void crearCuenta() {
         automationPractice.resultAccountCreatedIsVisible();
         automationPractice.clickSignOut();
     }
 
+
     // Login fallido
-
-
-    @When("^completo los datos (.+) y (.+)$")
-    public void ingresoPasswordFallida(String emailSignIn, String passwordFailed) {
-        automationPractice.enterFailedPassword(emailSignIn, passwordFailed);
+    @When("^completo los datos (.+)$")
+    public void ingresoPasswordFallida(String emailSignIn) {
+        automationPractice.enterFailedPassword(emailSignIn);
     }
     @Then("^verifico que la contraseña es incorrecta$")
     public void verificoMensajeDePasswordFallido() {

@@ -1,9 +1,8 @@
-package pages;
 
+package pages;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.junit.Assert;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -20,30 +19,41 @@ public class BasePage {
         WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
         driver = new ChromeDriver(chromeOptions);
-        wait = new WebDriverWait(driver, 10);
+        wait = new WebDriverWait(driver,10);
         driver.manage().window().maximize();
     }
     public BasePage(WebDriver driver){
         BasePage.driver = driver;
-        wait = new WebDriverWait(BasePage.driver,10);
+        wait = new WebDriverWait(driver,10);
     }
-
     public static void closeBrowser() {
         driver.quit();
     }
+
     public static void navigateTo(String url) {
         driver.get(url);
-    }private WebElement find(String locator) {
+    }
+    private WebElement find(String locator) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
     }
     public void clickElementByxpath(String locator) {
-        find(locator).click();
+        try {
+            find(locator).click();
+        } catch (Exception e) {
+            System.out.println("**********************");
+            System.out.println("Element was not found: " + locator);
+            System.out.println("**********************");
+        }
     }
-
     public void write(String locator,String textToWrite) {
-        find(locator).clear();
-        find(locator).sendKeys(textToWrite);
-
+        try {
+            find(locator).clear();
+            find(locator).sendKeys(textToWrite);
+        } catch (Exception e) {
+            System.out.println("**********************");
+            System.out.println("Element was not found: " + locator);
+            System.out.println("**********************");
+        }
     }
     public void SelectFromDropDownByValue(String locator,String valueToSelect) {
         Select dropdown = new Select(find(locator));
@@ -59,8 +69,8 @@ public class BasePage {
     public Boolean isDisplayed(String locator) {
         return find(locator).isDisplayed();
     }
+
     public List<WebElement> bringMeAllElements(String locator) {
         return driver.findElements(By.className(locator));
     }
 }
-
