@@ -12,7 +12,7 @@ Libraries: Cucumber - Behaviour Driven Development (BDD)
 Reports: Cucumber-reporting
 Environment configuration:
 
-Download and configure JAVA environment variables (JAVA_HOME and PATH) JDK 15.
+Download and configure JAVA environment variables (JAVA_HOME and PATH) JDK 11.
 
 Run tests:
 
