@@ -1,8 +1,5 @@
 package pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-
 public class SearchPage extends BasePage {
 
     private String dressesCategory = "//*[@id=\'block_top_menu\']/ul/li[2]";
@@ -28,8 +25,8 @@ public class SearchPage extends BasePage {
         clickElementById(yellowColorAvailable);
     }
 
-    public Boolean getTotalResultsProductsYellow() {
-        return isDisplayed(productsYellow);
+    public String getTotalResultsProductsYellow() {
+        return totalProducts(productsYellow);
     }
 
 }

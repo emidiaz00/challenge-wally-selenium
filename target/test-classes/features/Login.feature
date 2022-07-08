@@ -13,7 +13,7 @@ Feature: Registro exitoso de cliente, validando la correcta creación mediante a
 
     Examples:
       | emailSignIn |
-      | emildsn848@gmail.com |
+      | emildsn847@gmail.com |
       #| emildsn70@gmail.com |
       #| emildsn70@gmail.com |
       #| emildsn70@gmail.com |
@@ -26,6 +26,7 @@ Feature: Registro exitoso de cliente, validando la correcta creación mediante a
       #| emildsn70@gmail.com |
 
   @Regresion
+    @PasswordIncorrecta
     Scenario Outline: Registro con password incorrecta
     Given Navego a la pagina de automation practice
     And Cliqueo en Sign In
@@ -35,7 +36,7 @@ Feature: Registro exitoso de cliente, validando la correcta creación mediante a
     Then verifico que la contraseña es incorrecta
     Examples:
       | emailSignIn |
-      | emildsn0001@gmail.com |
+      | emildsn0002@gmail.com |
 
 
 

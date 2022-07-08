@@ -46,20 +46,13 @@ public class LoginSteps {
 
     // Login fallido
     @When("^completo los datos$")
-    public void ingresoPasswordFallida() {
+    public void ingresoPasswordFallida() throws Exception {
         automationPractice.enterFailedPassword();
     }
     @Then("^verifico que la contraseña es incorrecta$")
     public void verificoMensajeDePasswordFallido() {
         Assert.assertEquals("passwd", automationPractice.getMessagePassword());
+        System.out.println("Mensaje de error contraseña invalida: " + automationPractice.getMessagePassword() + " is invalid.");
         automationPractice.clickSignOut();
     }
-
-
-
-
-
-
-
-
 }

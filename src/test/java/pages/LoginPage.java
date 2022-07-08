@@ -97,7 +97,6 @@ public class LoginPage extends BasePage {
     }
 
     public String getMessagePassword() {
-        System.out.println(passwordFailed);
         return textFromElement(passwordFailed);
     }
     public void ClickCreateAnAccount() {

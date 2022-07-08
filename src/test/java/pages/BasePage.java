@@ -1,7 +1,6 @@
 
 package pages;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -93,6 +92,9 @@ public class BasePage {
     }
     public Boolean isDisplayed(String locator) {
         return find(locator).isDisplayed();
+    }
+    public String totalProducts(String locator) {
+        return find(locator).getText();
     }
 
     public List<WebElement> bringMeAllElements(String locator) {

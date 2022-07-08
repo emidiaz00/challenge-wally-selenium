@@ -26,6 +26,7 @@ Feature: Registro exitoso de cliente, validando la correcta creación mediante a
       #| emildsn70@gmail.com |
 
   @Regresion
+    @PasswordIncorrecta
     Scenario Outline: Registro con password incorrecta
     Given Navego a la pagina de automation practice
     And Cliqueo en Sign In

@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import pages.SearchPage;
 
 public class SearchSteps {
@@ -29,6 +30,7 @@ public class SearchSteps {
     @Then("^obtengo la cantidad de productos de color amarillo$")
     public void getTotalResultsYellowColor() {
         search.getTotalResultsProductsYellow();
+        System.out.println("Total de productos: " + search.getTotalResultsProductsYellow());
     }
 
 }
