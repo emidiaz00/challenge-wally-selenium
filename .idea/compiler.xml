@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="framework-selenium" />
         <module name="challenge-wally-selenium-ui" />
+        <module name="challenge-wally-selenium" />
       </profile>
     </annotationProcessing>
   </component>

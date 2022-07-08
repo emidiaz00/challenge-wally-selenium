@@ -1,6 +1,5 @@
 package steps;
 
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -9,50 +8,36 @@ import pages.LoginPage;
 
 public class LoginSteps {
 
-    LoginPage automationPractice = new LoginPage();
+    LoginPage login = new LoginPage();
 
-    // Login Exitoso
-    @Given("^Navego a la pagina de automation practice$")
-    public void navegoAutPracticePage() {
-        automationPractice.navigateToAutomationPracticeRegister();
+    @Given("^Navego a la pagina de automation practice al login$")
+    public void iAmOnTheAutomationPractice() {
+        login.navigateToSignIn();
     }
-    @And("^Cliqueo en Sign In$")
-    public void cliqueoSignIn() {
-        automationPractice.ClickSignInButton();
+    @When("^Ingreso usuario y contraseña$")
+    public void enterUserAndEmailLogin() {
+        login.clickOnSignIn();
+        login.enterEmail();
+        login.enterPassword();
     }
-    @And("^verifico create an account esta visible$")
-    public void verificoCreateAnAccountEstaVisible() {
-        automationPractice.createAnAccountTextIsVisible();
-    }
-    @And("^Ingreso el (.+)")
-    public void ingresoEmail(String emailSignIn) {
-        automationPractice.enterEmailSignIn(emailSignIn);
-    }
-    @And("^Cliqueo en create an account$")
-    public void cliqueoBotonCrearCuenta() {
-        automationPractice.clickButtonCreateAnAccount();
-    }
-    @When("^completo los campos y el campo (.+)$")
-    public void completarDatosUsuario(String emailSignIn) {
-        automationPractice.enterInformationUser(emailSignIn);
-        automationPractice.ClickCreateAnAccount();
-    }
-    @Then("^verifico que la pagina esta visible$")
-    public void crearCuenta() {
-        automationPractice.resultAccountCreatedIsVisible();
-        automationPractice.clickSignOut();
+    @Then("^verifico que el login se realizó correctamente$")
+    public void assertLoginWasSucess() {
+        login.clickOnSignInButton();
+        Assert.assertEquals("Welcome to your account. Here you can manage all of your personal information and orders.", login.getAccountMessage());
+        login.clickSignOut();
     }
 
-
-    // Login fallido
-    @When("^completo los datos$")
-    public void ingresoPasswordFallida() throws Exception {
-        automationPractice.enterFailedPassword();
+    // password failed
+    @When("^Ingreso usuario y contraseña fallido$")
+    public void enterEmailAndPasswordFailed() {
+        login.clickOnSignIn();
+        login.enterFailedPassword();
+        login.clickOnSignInButton();
     }
-    @Then("^verifico que la contraseña es incorrecta$")
-    public void verificoMensajeDePasswordFallido() {
-        Assert.assertEquals("passwd", automationPractice.getMessagePassword());
-        System.out.println("Mensaje de error contraseña invalida: " + automationPractice.getMessagePassword() + " is invalid.");
-        automationPractice.clickSignOut();
+
+    @Then("^verifico mensaje de password fallida$")
+    public void passwordWasFailed() {
+        Assert.assertEquals("Invalid password.", login.getMessagePasswordFailed());
+        System.out.println("Mensaje de error contraseña invalida: " + login.getMessagePasswordFailed() + " is invalid.");
     }
 }
