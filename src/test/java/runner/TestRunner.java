@@ -11,7 +11,7 @@ import pages.BasePage;
         features = "src/test/resources/features",
         glue = "steps",
         plugin = {"json:test/report/cucumber_report.json"},
-        tags = "@Regresion"
+        tags = "@login"
 )
 public class TestRunner {
     @AfterClass
