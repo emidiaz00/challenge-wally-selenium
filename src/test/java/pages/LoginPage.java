@@ -11,6 +11,9 @@ public class LoginPage extends BasePage {
     private String buttonSignIn = "//button[@id='SubmitLogin']";
     private String accountLogin = "//p[contains(text(),'Welcome to your account. Here you can manage all o')]";
 
+    private String passwordFailed = "//*[@id=\'center_column\']/div[1]/ol/li";
+    private String buttonSignOut = "//header/div[2]/div[1]/div[1]/nav[1]/div[2]/a[1]";
+
     public LoginPage() {
         super(driver);
     }
@@ -30,9 +33,21 @@ public class LoginPage extends BasePage {
     public void clickOnSignInButton() {
         clickElementByxpath(buttonSignIn);
     }
+    public void clickSignOut() {
+        clickElementByxpath(buttonSignOut);
+    }
 
-    public String getAccontMessage() {
+    public String getAccountMessage() {
         return textFromElement(accountLogin);
+    }
+
+    public void enterFailedPassword() {
+        write(emailInput, "emildsn09@gmail.com");
+        write(passwordInput, "pasw");
+    }
+
+    public String getMessagePasswordFailed() {
+        return textFromElement(passwordFailed);
     }
 
 
