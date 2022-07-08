@@ -1,7 +1,7 @@
 package pages;
 
 
-public class AutPracticePage extends BasePage {
+public class LoginPage extends BasePage {
 
     private String signInButton = "//a[contains(text(),'Sign in')]";
     private String createAnAccountText = "//button[@id='SubmitCreate']";
@@ -34,7 +34,7 @@ public class AutPracticePage extends BasePage {
 
     private String buttonSignOut = "//*[@id=\'header\']/div[2]/div/div/nav/div[2]/a";
 
-    public AutPracticePage() {
+    public LoginPage() {
         super(driver);
     }
 
@@ -97,6 +97,7 @@ public class AutPracticePage extends BasePage {
     }
 
     public String getMessagePassword() {
+        System.out.println(passwordFailed);
         return textFromElement(passwordFailed);
     }
     public void ClickCreateAnAccount() {

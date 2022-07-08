@@ -5,11 +5,11 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import pages.AutPracticePage;
+import pages.LoginPage;
 
-public class AutPracticeSteps {
+public class LoginSteps {
 
-    AutPracticePage automationPractice = new AutPracticePage();
+    LoginPage automationPractice = new LoginPage();
 
     // Login Exitoso
     @Given("^Navego a la pagina de automation practice$")
@@ -54,6 +54,10 @@ public class AutPracticeSteps {
         Assert.assertEquals("passwd", automationPractice.getMessagePassword());
         automationPractice.clickSignOut();
     }
+
+
+
+
 
 
 

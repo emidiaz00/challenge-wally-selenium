@@ -36,6 +36,31 @@ public class BasePage {
     private WebElement find(String locator) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
     }
+    private WebElement findByClass(String locator) {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(locator)));
+    }
+    public void clickByClass(String locator) {
+        try {
+            findByClass(locator).click();
+        } catch (Exception e) {
+            System.out.println("**********************");
+            System.out.println("Element was not found: " + locator);
+            System.out.println("**********************");
+        }
+    }
+    private WebElement findById(String locator) {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(locator)));
+    }
+    public void clickElementById(String locator) {
+        try {
+            findById(locator).click();
+        } catch (Exception e) {
+            System.out.println("**********************");
+            System.out.println("Element was not found: " + locator);
+            System.out.println("**********************");
+        }
+    }
+
     public void clickElementByxpath(String locator) {
         try {
             find(locator).click();
