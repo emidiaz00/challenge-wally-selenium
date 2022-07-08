@@ -13,7 +13,7 @@ Feature: Registro exitoso de cliente, validando la correcta creación mediante a
 
     Examples:
       | emailSignIn |
-      | emildsn847@gmail.com |
+      | emildsn840@gmail.com |
       #| emildsn70@gmail.com |
       #| emildsn70@gmail.com |
       #| emildsn70@gmail.com |
