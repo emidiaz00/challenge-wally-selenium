@@ -1,7 +1,7 @@
 package pages;
 
 
-public class Registro extends BasePage {
+public class RegistroPage extends BasePage {
 
     private String signInButton = "//a[contains(text(),'Sign in')]";
     private String createAnAccountText = "//button[@id='SubmitCreate']";
@@ -34,7 +34,7 @@ public class Registro extends BasePage {
 
     private String buttonSignOut = "//*[@id=\'header\']/div[2]/div/div/nav/div[2]/a";
 
-    public Registro() {
+    public RegistroPage() {
         super(driver);
     }
 
