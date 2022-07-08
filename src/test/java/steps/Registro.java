@@ -5,11 +5,10 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import pages.LoginPage;
 
-public class LoginSteps {
+public class Registro {
 
-    LoginPage automationPractice = new LoginPage();
+    pages.Registro automationPractice = new pages.Registro();
 
     // Login Exitoso
     @Given("^Navego a la pagina de automation practice$")
