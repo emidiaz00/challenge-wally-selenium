@@ -32,7 +32,7 @@ public class AutPracticePage extends BasePage {
 
     private String passwordFailed = "//b[contains(text(),'passwd')]";
 
-    private String buttonSignOut = "a[title='Log me out']";
+    private String buttonSignOut = "//*[@id=\'header\']/div[2]/div/div/nav/div[2]/a";
 
     public AutPracticePage() {
         super(driver);
@@ -75,12 +75,12 @@ public class AutPracticePage extends BasePage {
         write(mobileNumberRegister,"11444444444");
         clickElementByxpath(createAnAccountButtonRegister);
     }
-    public void enterFailedPassword(String emailSignIn) {
+    public void enterFailedPassword() {
         clickElementByxpath(buttonGender);
         write(nameInputField, "Emiliano");
         write(lastNameRegister, "Diaz");
-        write(emailInputRegister, emailSignIn);
-        write(passwordInputRegister, "Pass");
+        write(emailInputRegister, "emildsn0000@gmail.com");
+        write(passwordInputRegister, "pass");
         clickElementByxpath(dateOfBirth);
         clickElementByxpath(month);
         clickElementByxpath(year);

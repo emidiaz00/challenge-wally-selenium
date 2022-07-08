@@ -1,8 +1,7 @@
 Feature: Registro exitoso de cliente, validando la correcta creación mediante aserciones.
 
-  @Regression
 
-    @Login
+  @Regression
     Scenario Outline: Registrar a un cliente exitosamente
     Given Navego a la pagina de automation practice
     And Cliqueo en Sign In
@@ -14,7 +13,7 @@ Feature: Registro exitoso de cliente, validando la correcta creación mediante a
 
     Examples:
       | emailSignIn |
-      | emildsn860@gmail.com |
+      | emildsn849@gmail.com |
       #| emildsn70@gmail.com |
       #| emildsn70@gmail.com |
       #| emildsn70@gmail.com |
@@ -25,6 +24,24 @@ Feature: Registro exitoso de cliente, validando la correcta creación mediante a
       #| emildsn70@gmail.com |
       #| emildsn70@gmail.com |
       #| emildsn70@gmail.com |
+
+  @Regression
+    Scenario Outline: Registrar a un cliente exitosamente
+    Given Navego a la pagina de automation practice
+    And Cliqueo en Sign In
+    And Ingreso el <emailSignIn>
+    And Cliqueo en create an account
+    When completo los datos
+    Then verifico que la contraseña es incorrecta
+    Examples:
+      | emailSignIn |
+      | emildsn0000@gmail.com |
+
+
+
+
+
+
 
 
 

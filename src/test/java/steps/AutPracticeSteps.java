@@ -45,13 +45,14 @@ public class AutPracticeSteps {
 
 
     // Login fallido
-    @When("^completo los datos (.+)$")
-    public void ingresoPasswordFallida(String emailSignIn) {
-        automationPractice.enterFailedPassword(emailSignIn);
+    @When("^completo los datos$")
+    public void ingresoPasswordFallida() {
+        automationPractice.enterFailedPassword();
     }
     @Then("^verifico que la contraseña es incorrecta$")
     public void verificoMensajeDePasswordFallido() {
         Assert.assertEquals("passwd", automationPractice.getMessagePassword());
+        automationPractice.clickSignOut();
     }
 
 
