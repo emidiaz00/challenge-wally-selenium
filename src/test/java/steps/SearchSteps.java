@@ -24,7 +24,7 @@ public class SearchSteps {
     }
     @And("^cliqueo en la categoria de colores amarillos$")
     public void clickOnCategoryYellowColors() {
-        search.clickCategoryDresses();
+        search.clickYellowColorPalette();
     }
     @Then("^obtengo la cantidad de productos de color amarillo$")
     public void getTotalResultsYellowColor() {

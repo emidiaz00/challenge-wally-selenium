@@ -1,7 +1,7 @@
 Feature: Registro exitoso de cliente, validando la correcta creación mediante aserciones.
+ @ChallengeWally
 
-
-  @Regression
+  @Regresion
     Scenario Outline: Registrar a un cliente exitosamente
     Given Navego a la pagina de automation practice
     And Cliqueo en Sign In
@@ -13,7 +13,7 @@ Feature: Registro exitoso de cliente, validando la correcta creación mediante a
 
     Examples:
       | emailSignIn |
-      | emildsn849@gmail.com |
+      | emildsn847@gmail.com |
       #| emildsn70@gmail.com |
       #| emildsn70@gmail.com |
       #| emildsn70@gmail.com |
@@ -25,7 +25,7 @@ Feature: Registro exitoso de cliente, validando la correcta creación mediante a
       #| emildsn70@gmail.com |
       #| emildsn70@gmail.com |
 
-  @Regression
+  @Regresion
     Scenario Outline: Registro con password incorrecta
     Given Navego a la pagina de automation practice
     And Cliqueo en Sign In
@@ -35,7 +35,7 @@ Feature: Registro exitoso de cliente, validando la correcta creación mediante a
     Then verifico que la contraseña es incorrecta
     Examples:
       | emailSignIn |
-      | emildsn0000@gmail.com |
+      | emildsn0002@gmail.com |
 
 
 

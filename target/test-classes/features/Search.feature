@@ -1,7 +1,9 @@
 Feature: Busqueda dresses
 
 
-  @Busqueda
+  @Regresion
+
+    @search
   Scenario: Buscar dresses de color amarillo
     Given Navego a la pagina de automation practice home Dress
     And Cliqueo en Dresses
